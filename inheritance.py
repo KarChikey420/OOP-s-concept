@@ -1,20 +1,20 @@
-class Car:
-    def __init__(self,name,brand):
+class Father:
+    def __init__(self,name,properties):
         self.name=name
-        self.__brand=brand
+        self.properties=properties
         
-    def print_car(self):
-        return f"{self.name} {self.__brand}"
-        
-class battery(Car):
-    def __init__(self,name,brand,battery):
-        super().__init__(name,brand)
-        self.battery=battery
-        
-    def print_battery_car(self):
-        return f"{super().print_car()} {self.battery}"
-        
+    def information(self):
+        return f"My name is {self.name} and my properties are {self.properties}"
 
-car1=battery("Toyota","2020","yes")
-print(car1.print_battery_car())
+
+class son(Father):
+    def __init__(self,name,properties,extras):
+        self.extras=extras
+        super().__init__(name,properties)
         
+    def information(self):
+        parent_info=super().information()
+        return f"{parent_info} and i have a {self.extras}"
+        
+obj=son("kartikey","cars","bicycle")
+print(obj.information())
