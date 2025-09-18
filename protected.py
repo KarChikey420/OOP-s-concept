@@ -15,27 +15,48 @@
 # obj=square(5,3)
 # print(obj.value())
 
-class Father:
-    def __init__(self,name,work):
+# class Father:
+#     def __init__(self,name,work):
+#         self._name=name
+#         self._work=work
+        
+#     def _my_info(self):
+#         return f"my name is {self._name} profession {self._work}"
+    
+#     def my_info(self):
+#         return self._my_info()
+    
+# class son(Father):
+#     def __init__(self, name, work):
+#         super().__init__(name, work)
+        
+#     def my_info(self):
+#         return super()._my_info()
+    
+# if __name__=="__main__":
+    
+#     obj=Father("deva","doctor")
+#     print(obj.my_info())
+#     obj1=son("deepu","dancer")
+#     print(obj1.my_info())
+
+class Parent:
+    def __init__(self,name,age):
         self._name=name
-        self._work=work
+        self._age=age
         
-    def _my_info(self):
-        return f"my name is {self._name} profession {self._work}"
+    def _detail(self):
+        return f"my name {self._name} and age {self._age}"
     
-    def my_info(self):
-        return self._my_info()
+    def detail(self):
+        return self._detail()
     
-class son(Father):
-    def __init__(self, name, work):
-        super().__init__(name, work)
+class Child(Parent):
+    def __init__(self, name, age):
+        super().__init__(name, age)
         
-    def my_info(self):
-        return super()._my_info()
+    def mydetail(self):
+        return super()._detail() 
     
-if __name__=="__main__":
-    
-    obj=Father("deva","doctor")
-    print(obj.my_info())
-    obj1=son("deepu","dancer")
-    print(obj1.my_info())
+my_obj=Child('rooo','12')
+print(my_obj.mydetail())
