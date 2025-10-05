@@ -1,8 +1,8 @@
-from abc import ABC , abstractmethod
+from abc import ABC, abstractmethod
 
-pi=3.14
-
-class Shape(ABC):
+class Shape:
+    def __init__(self):
+        pass
     
     @abstractmethod
     def area(self):
@@ -11,36 +11,33 @@ class Shape(ABC):
     @abstractmethod
     def perimeter(self):
         pass
-
-class ractangle(Shape):
-    def __init__(self,a,b):
-        self.a=a
-        self.b=b
     
-    def area(self):
-        return f"The area of a ractangle:{self.a * self.b}"
-    
-    def perimeter(self):
-        return f"The perimeter of a ractangle:{2*(self.a+self.b)}"
-        
-class circle(Shape):
+class Circle(ABC):
     def __init__(self,r):
         self.r=r
+    
+    def area(self):
+        return 3.14*self.r*self.r
+    
+    def perimeter(self):
+        return 2*3.14*self.r
+    
+class Square(ABC):
+    def __init__(self,l):
+        self.l=l
         
     def area(self):
-        return f"The area of a circle:{pi*self.r*self.r}"
-        
-    def perimeter(self):
-        return f"The perimeter of a circle:{2*pi*self.r}"
+            return self.l*self.l
 
-obj=ractangle(2,3)
+    def perimenter(self):
+        return 4*self.l 
+    
+obj=Circle(5)
 print(obj.area())
 print(obj.perimeter())
 
-obj1=circle(3)
+obj1=Square(4)
 print(obj1.area())
-print(obj1.perimeter())
+print(obj1.perimenter())       
     
-    
-    
-    
+        
