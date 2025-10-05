@@ -1,4 +1,4 @@
-class Father:
+class grandfather:
     def __init__(self,name,properties):
         self.name=name
         self.properties=properties
@@ -7,7 +7,7 @@ class Father:
         return f"My name is {self.name} and my properties are {self.properties}"
 
 
-class son(Father):
+class son(grandfather):
     def __init__(self,name,properties,extras):
         self.extras=extras
         super().__init__(name,properties)
