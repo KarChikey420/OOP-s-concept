@@ -1,25 +1,17 @@
-class Shape:
-    def __init__(self,num1,num2):
-        self.__num1=num1
-        self.__num2=num2
-        
-    def get_number(self):  #getter method(which access the private attributes)
-        return self.__num1+self.__num2
-        
-    def set_number(self,num1,num2):#setter method(which modify the private attributes)
-        self.__num1=num1
-        self.__num2=num2
-        
-class Squre(Shape):
-    def __init__(self,side):
-        
-        super().__init__(side,side)
-        
-obj1=Squre(5)
+class Bank:
+    def __init__(self,id,name):
+        self._id=id
+        self._name=name
+    
+    def get_data(self):
+        return f'my id is {self._id} and name is {self._name}'
+    
+    def set_data(self,id,name):
+        self._id=id
+        self._name=name
 
-print(obj1.get_number())
+obj=Bank(1,'kartik')
+print(obj.get_data())
 
-obj1.set_number(7,7)
-print(obj1.get_number())
-
-       
+obj.set_data(2,'data')
+print(obj.get_data())
