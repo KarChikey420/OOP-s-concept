@@ -1,12 +1,12 @@
-class Car:                     
-    def __init__(self,brand,model):
+class Car:
+    def __init__(self,brand,model,price):
         self.brand=brand
         self.model=model
+        self.price=price
         
-    def description(self):
-     return f"{self.brand} {self.model}"
-     
+    def display_details(self):
+       return f"My car brand is {self.brand},model is {self.model} and price is {self.price}"
 
-car=Car("volvo","2020")
-print(car.description())
-    
+if __name__=="__main__":
+    obj=Car("Kia","Sonet",2000000)
+    print(obj.display_details())
