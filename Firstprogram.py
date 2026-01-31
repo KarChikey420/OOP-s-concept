@@ -1,5 +1,5 @@
 class Student:
-    name="Anonymous" # Its a class variable because of priority is not that much 
+    name="Anonymous" # Its a class variable its priority is less than instance variable
     def __init__(self,name,marks):
         self.name=name
         self.marks=marks
