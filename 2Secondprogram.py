@@ -3,6 +3,10 @@ class Avarage:
         self.name=name
         self.marks=marks
         self.Avg=Avg
+    
+    @staticmethod  #decorator
+    def hello():
+        print("Hello guys............")
         
     def Student(self):
         sum=0
@@ -12,4 +16,5 @@ class Avarage:
         print(f"Hello ! {self.name} your AVG of Marks is {self.Avg}")
         
 A1=Avarage("ghanshyam",[90,80,70,60],0)
+A1.hello() #direct call to static method 
 A1.Student()
