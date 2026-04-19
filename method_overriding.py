@@ -1,19 +1,22 @@
 class addition:
-    def __init__(self,num1,num2):
-        self.num1=num1
-        self.num2=num2
+    def __init__(self, a, b):
+        self.a=a
+        self.b=b
         
-    def operation(self):
-        return self.num1+self.num2
-        
-class subtraction(addition):
-    def __init__(self,num1,num2):
-        super().__init__(num1,num2)
-        
-    def operation(self):
-        return self.num1-self.num2
-        
-add=addition(2,4)
-sub=subtraction(4,2)
+    def add(self):
+        return self.a + self.b
 
-print(sub.operation())
+class submision(addition):
+    def __init__(self,a,b,c):
+        super().__init__(a,b)
+        self.c=c
+        
+    def add(self):
+        return self.a + self.b + self.c
+    
+if __name__ == "__main__":
+    myobj=addition(1,2)
+    print(myobj.add())
+    
+    myobj1=submision(1,2,3)
+    print(myobj1.add())
