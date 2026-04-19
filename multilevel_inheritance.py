@@ -1,26 +1,26 @@
-class grandparent:
-    def __init__(self,name,properties):
-        self.name=name
-        self.properties=properties
+class Salary:
+    def __init__(self,payout):
+        self.payout=payout
+    
+    def Month1(self):
+        print("Amount:",self.payout)
         
-    def Who(self):
-        return f"i am {self.name} and my {self.properties}"
+class Salary2(Salary):
+    def __init__(self,payout,health_allounce):
+        super().__init__(payout)
+        self.health_allounce=health_allounce
         
-
-class Father(grandparent):
-    def __init__(self,name,properties,extras):
-        super().__init__(name,properties)
-        self.extras=extras
+    def Month2(self):
+        print("amount:",self.health_allounce+self.payout)
         
-    def Who(self):
-        return f"i am {self.name} and i have {self.properties} and {self.extras}"
+class Salary3(Salary2):
+    def __init__(self,intrest,payout,health_allounce):
+        super().__init__(payout,health_allounce)
+        self.intrest=intrest
         
-class Child(Father):
-    def __init__(self,name,properties,extras):
-        super().__init__(name,properties,extras)
+    def overall(self):
+        print("Total amount of money:",self.health_allounce+self.payout+self.intrest)
         
-    def Who(self):
-        return f"i am {self.name} and i have{self.properties} and {self.extras}"
-        
-child=Child("anna","cars","abroad land")
-print(child.Who())
+if __name__=="__main__":
+    Obj=Salary3(1000,50000,5000)
+    Obj.overall()
